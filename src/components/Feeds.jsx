@@ -9,7 +9,6 @@ const Feeds = () => {
     let allfollwersids = useSelector(store => store.relation.followedUsers)
     // console.log(allfollwersdata[currentUserId])
     allfollwersids = allfollwersids[currentUserId]
-    console.log(allfollwersids)
     allfollwersids?.forEach((id) => {
         let posts = data?.filter(post => post.userId === id);
         if (posts.length > 0) {
@@ -17,7 +16,6 @@ const Feeds = () => {
         }
     })
     
-    console.log(myandposts)
     myandposts.sort((a, b) => a.timestamp - b.timestamp);
 
     return (

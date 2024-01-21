@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const loadState = () => {
   try {
+    console.log('load state')
     const serializedState = localStorage.getItem("userState");
     return serializedState ? JSON.parse(serializedState) : undefined;
   } catch (error) {
@@ -29,12 +30,25 @@ const userSlice = createSlice({
   reducers: {
     addUser: (state, action) => {
       const newUser = action.payload;
-      console.log(newUser)
+    
+      const isUserAlreadyPresent = state.users.some(user => user?.uid === newUser.uid);
+    
+      if (!isUserAlreadyPresent) {
         state.currentUser = newUser;
         state.users.push(newUser);
-      saveState(state);
-
+        saveState(state); 
+      } else {
+        const existingUserIndex = state.users.findIndex(user => user.uid === newUser.uid);
+        if (existingUserIndex !== -1) {
+          const updatedUser = { ...state.users[existingUserIndex], ...newUser };
+          state.users[existingUserIndex] = updatedUser;
+          state.currentUser = updatedUser;
+          saveState(state);
+        }
+    
+      }
     },
+    
     updateUser: (state, action) => {
       const updatedUser = action.payload;
       state.currentUser = updatedUser;

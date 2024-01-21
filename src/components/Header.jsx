@@ -12,7 +12,6 @@ const Header = () => {
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const toggledata = useSelector(store => store.toggle)
-  console.log(toggledata)
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {

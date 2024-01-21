@@ -5,7 +5,6 @@ const Users = () => {
     const loggedUsers = useSelector(store => store.user)
     let users = loggedUsers?.users
     const filterdUsers = users?.filter(u => u?.uid != loggedUsers?.currentUser?.uid);
-    console.log(filterdUsers)
     return (
         <div className="w-full">
             {

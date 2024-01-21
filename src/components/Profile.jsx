@@ -6,13 +6,12 @@ const Profile = () => {
 
     const userState = JSON.parse(localStorage.getItem("userState"));
     let currentUserId = userState ? userState.currentUser?.uid : null;
-    let currentUsername= userState ? userState.currentUser?.displayName : null;
+    let currentUsername= useSelector(store=>store.user.currentUser.displayName)
 
     let postsdata = useSelector(store => store.posts.userPosts)
     let myposts = postsdata?.filter(post => post.userId === currentUserId);
 
     const allFollowers = allFollowersFunc(currentUserId)
-    console.log(allFollowers)
     return (
        <div className="w-full">
         <div className="shadow-lg rounded-lg bg-gray-100 p-2 mt-6 flex w-full">

@@ -7,10 +7,8 @@ import { useParams } from "react-router";
 
 const Browse = () => {
     const toggledata = useSelector(store => store.toggle)
-    const { param } = useParams();
 
     // Now, you can use the values of param1 and param2 in your component
-    console.log(param);
     return (
         <div className="relative">
             <div>

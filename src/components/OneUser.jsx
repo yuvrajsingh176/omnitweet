@@ -10,7 +10,6 @@ const OneUser = ({ name, userId }) => {
     const dispatch = useDispatch();
     const followedusers = useSelector(store => store.relation.followedUsers)
     let followed = followedusers[currentUserId]?.includes(userId);
-    console.log(followed)
     let allfollowed=allFollowersFunc(userId)
     return (
         <div className="shadow-lg rounded-lg bg-gray-100 p-2 mt-6 flex w-full">

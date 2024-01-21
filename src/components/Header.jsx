@@ -37,27 +37,27 @@ const Header = () => {
   return (
     <div className=" z-11 flex flex-col  justify-between  w-screen  px-8 py-2 shadow-xl  ">
       {user ? (
-        <div className="flex justify-between  p-2">
+        <div className="flex sm:justify-between space-x-2 p-2">
           <div>
 
-<h1 className="w-1/2 text-orange-500 text-3xl">TweetX</h1>
+<h1 className="  sm:w-1/2  text-orange-500 text-xl sm:text-3xl mr-3">TweetX</h1>
           </div>  
         
-          <div className="w-1/2 flex justify-around">
+          <div className="sm:w-1/2 flex justify-around sm:justify-between ">
             <button onClick={() => {
               dispatch(togglefeed())
           }}>
-            <h1 className="text-gray-400 font-bold ">Feed</h1>
+            <h1 className="text-gray-400 font-bold mr-3">Feed</h1>
           </button>
           <button onClick={() => {
               dispatch(toggleusers())
           }}>
-            <h1 className="text-gray-400 font-bold ">Users</h1>
+            <h1 className="text-gray-400 font-bold mr-3">Users</h1>
           </button>
           <button onClick={() => {
               dispatch(toggleprofile())
           }}>
-            <h1 className="text-gray-400 font-bold ">Profile</h1>
+            <h1 className="text-gray-400 font-bold mr-3">Profile</h1>
           </button>
           <button onClick={handleSignout}>
             <h1 className="text-gray-400 font-bold ">Sign out</h1>

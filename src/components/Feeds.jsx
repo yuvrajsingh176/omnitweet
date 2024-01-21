@@ -20,7 +20,8 @@ const Feeds = () => {
     console.log(myandposts)
     myandposts.sort((a, b) => a.timestamp - b.timestamp);
 
-    return (<div>
+    return (
+        <div className="helo sm:w-full mx-auto">
         {
             myandposts.length>0 ?   myandposts?.map(tweets => (
                 <Onefeed key={tweets.userId} name={tweets.userName} content={tweets.content} time={ tweets.timestamp} />

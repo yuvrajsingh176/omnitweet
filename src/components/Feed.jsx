@@ -22,8 +22,8 @@ const TextEditor = () => {
   };
 
   return (
-    <div className="w-full">
-          <div>
+    <div className="w-full sm:w-full">
+          <div className="mx-2">
           <button
         className="rounded-lg text-white bg-orange-500 p-3"
         onClick={handleButtonClick}
@@ -53,7 +53,7 @@ const TextEditor = () => {
        
         </div>
           </div>
-          <div className="mt-4  h-screen ">
+          <div className="mt-4  h-screen sm:w-full">
           <Feeds/>
           </div>
     </div>

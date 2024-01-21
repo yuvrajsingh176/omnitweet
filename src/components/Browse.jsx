@@ -16,7 +16,7 @@ const Browse = () => {
             <div>
                 <Header />            
             </div>
-            <div className="  h-screen  mt-2 mx-auto  flex  justify-center  left-1/2  w-1/2">
+            <div className="  h-screen  mt-2 mx-auto  flex  justify-center  left-1/2  sm:w-1/2 ">
                
             {toggledata.feed ? <Feed /> : null}
             {toggledata.users ? <Users /> : null}

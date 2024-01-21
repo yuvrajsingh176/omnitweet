@@ -9,10 +9,10 @@ const Users = () => {
     return (
         <div className="w-full">
             {
-                filterdUsers.map(user => (
+             (filterdUsers?.length>0 ?   filterdUsers.map(user => (
                     <OneUser key={user?.uid} userId={user?.uid} name={ user?.displayName} />
                     
-                ))
+                )):"No users are added first add more users to the storage.")
          }   
 
         </div>    

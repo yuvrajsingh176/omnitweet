@@ -9,8 +9,8 @@ const formattedDate = date.toLocaleString().split(','); // Adjust the locale as 
     console.log(formattedDate)
     const datepart = formattedDate[0];
     let timepart = formattedDate[1]
-    let con = timepart.slice(1, 6)
- 
+    let con = timepart.slice(1, 5)
+ console.log(con)
     
     return (
         <div className="sm:w-full shadow-lg rounded-lg bg-gray-100 p-2 mt-6 flex">
